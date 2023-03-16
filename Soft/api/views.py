@@ -18,7 +18,7 @@ class BaseSerializerAPI(APIView, PageNumberPagination):
         res = Base.objects.all()
         results = self.paginate_queryset(res, request, view=self)
         serializer =self.serializer_class(results,many=True)
-        return self.get_paginated_response(serializer.data)
+        # return self.get_paginated_response(serializer.data)
         return Response(data=serializer.data)
 
     def post(self,request):
@@ -27,6 +27,16 @@ class BaseSerializerAPI(APIView, PageNumberPagination):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(data=serializer.data,status=status.HTTP_201_CREATED)
+    
+
+class BaseDetailApi(APIView):
+    serializer_class = BaseSerializer
+
+    def get(self, request, pk):
+        res = get_object_or_404(Base, id=pk)    
+        serializer = self.serializer_class(res)
+        return Response(data=serializer.data)
+
 
 
 
