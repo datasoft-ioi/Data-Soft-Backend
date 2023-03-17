@@ -31,6 +31,15 @@ class BaseSerializerAPI(APIView, PageNumberPagination):
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
 
+class BaseDetailApi(APIView):
+    serializer_class = BaseSerializer
+
+    def get(self, request, pk):
+        res = get_object_or_404(Base, id=pk)    
+        serializer = self.serializer_class(res)
+        return Response(data=serializer.data)
+
+
 
 class BaseUpdatedSerializer(APIView):
     serializer_class = BaseSerializer
