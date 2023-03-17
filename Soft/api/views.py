@@ -10,7 +10,6 @@ from rest_framework.pagination import LimitOffsetPagination, PageNumberPaginatio
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
 
-
 class BaseSerializerAPI(APIView, PageNumberPagination):
     page_size = 3
     serializer_class = BaseSerializer
