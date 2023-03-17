@@ -7,32 +7,36 @@ from rest_framework.views import APIView
 from .serializers import BaseSerializer
 from rest_framework import status
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
-
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
 
 
 class BaseSerializerAPI(APIView, PageNumberPagination):
     page_size = 3
     serializer_class = BaseSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def get(self,request,*args,**kwargs):
         res = Base.objects.all()
         results = self.paginate_queryset(res, request, view=self)
-        serializer =self.serializer_class(results,many=True)
+        serializer =self.serializer_class(results, many=True)
         return self.get_paginated_response(serializer.data)
-        return Response(data=serializer.data)
+        # return Response(data=serializer.data)
 
     def post(self,request):
         data = request.data
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(data=serializer.data,status=status.HTTP_201_CREATED)
+        return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
 
 
 class BaseUpdatedSerializer(APIView):
     serializer_class = BaseSerializer
-    def get(self,request,pk):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    
+    def get(self, request, pk):
         res = get_object_or_404(Base, id=pk)
         serializer = self.serializer_class(res)
         return Response(data=serializer.data)
