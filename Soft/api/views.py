@@ -72,8 +72,8 @@ class GalerrySerializerAPI(APIView, PageNumberPagination):
     def get(self,request,*args,**kwargs):
         res = Gallery.objects.all()
         uzb = self.paginate_queryset(res, request, view=self)
-        serializer = self.serializer_class(uzb, many=True)
-        return Response(data=serializer.data)
+        serializer = self.serializer_class(res, many=True)
+        return Response(serializer.data)
 
 
     def post(self,request):
@@ -82,6 +82,7 @@ class GalerrySerializerAPI(APIView, PageNumberPagination):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+
 
 class GalleryUpdatedSerializer(APIView):
     serializer_class = AboutSerializer
