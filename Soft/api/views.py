@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
+
 # About
 class AboutSerializerAPI(APIView, PageNumberPagination):
     page_size = 3
@@ -29,6 +30,8 @@ class AboutSerializerAPI(APIView, PageNumberPagination):
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
+
+# About Update
 class AboutUpdatedSerializer(APIView):
     serializer_class = AboutSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
