@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
-
+# About
 class AboutSerializerAPI(APIView, PageNumberPagination):
     page_size = 3
     serializer_class = AboutSerializer
