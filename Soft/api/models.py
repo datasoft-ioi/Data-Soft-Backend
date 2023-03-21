@@ -26,7 +26,7 @@ class About(models.Model):
     def __str__(self) -> str:
         return self.title
 
-
+# Gallery
 class Gallery(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media/galley/%Y/%m/%d')
@@ -34,7 +34,7 @@ class Gallery(models.Model):
     def __str__(self) -> str:
         return self.title
     
-
+# OurProjects
 class OurProjects(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media/%Y/%m/%d')
