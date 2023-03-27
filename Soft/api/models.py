@@ -26,6 +26,7 @@ class About(models.Model):
     def __str__(self) -> str:
         return self.title
 
+
 # Gallery
 class Gallery(models.Model):
     title = models.CharField(max_length=200)
@@ -34,8 +35,23 @@ class Gallery(models.Model):
     def __str__(self) -> str:
         return self.title
     
+
 # OurProjects
 class OurProjects(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media/%Y/%m/%d')
     url = models.CharField(max_length=200)
+
+
+# Asosiy sayt uchun
+class HomeTitle(models.Model):
+    uz_title = models.CharField(max_length=200)
+    ru_title = models.CharField(max_length=200)
+
+    uz_mini_desc = models.CharField(max_length=200)
+    ru_mini_desc = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.uz_title
+    
+

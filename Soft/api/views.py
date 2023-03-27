@@ -2,12 +2,27 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Base, About, Gallery, OurProjects
+from .models import Base, About, Gallery, OurProjects, HomeTitle
 from rest_framework.views import APIView
-from .serializers import BaseSerializer, AboutSerializer, GallerySerializer, OurProjectsSerializer
+from .serializers import BaseSerializer, AboutSerializer, GallerySerializer, OurProjectsSerializer, HomeTitleSerializer
 from rest_framework import status
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+
+# HomeTitle 
+
+class HomeTitleSerializerAPI(APIView, PageNumberPagination):
+    page_size = 3
+    serializer_class = HomeTitleSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+
+    def get(self,request,*args,**kwargs):
+        res = HomeTitle.objects.all()[:1]
+        uzb = self.paginate_queryset(res, request, view=self)
+        serializer = self.serializer_class(uzb, many=True)
+        return Response(data=serializer.data)
+
 
 
 # About
