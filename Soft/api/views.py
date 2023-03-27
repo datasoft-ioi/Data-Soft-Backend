@@ -88,7 +88,7 @@ class GalerrySerializerAPI(APIView, PageNumberPagination):
 
 
 class GalleryUpdatedSerializer(APIView):
-    serializer_class = AboutSerializer
+    serializer_class = GallerySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     
     def get(self, request, pk):
