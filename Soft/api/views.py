@@ -87,10 +87,12 @@ class GalerrySerializerAPI(APIView, PageNumberPagination):
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
 
+# Gallery update serializer
 class GalleryUpdatedSerializer(APIView):
     serializer_class = GallerySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     
+
     def get(self, request, pk):
         res = get_object_or_404(Gallery, id=pk)
         serializer = self.serializer_class(res)
