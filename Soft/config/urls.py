@@ -23,7 +23,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
-    path('rest-auth/', include('rest_framework.urls'))
+    path('rest-auth/', include('rest_framework.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 

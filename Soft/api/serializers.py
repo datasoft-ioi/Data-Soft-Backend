@@ -38,3 +38,9 @@ class OurProjectsSerializer(serializers.ModelSerializer):
 class OurCoreSevisSerializer(serializers.ModelSerializer):
     class Meta:
         model = OurCoreServis
+        fields = '__all__'
+
+class InfoDevSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InfoDev
+        fields = '__all__'

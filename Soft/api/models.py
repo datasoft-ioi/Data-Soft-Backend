@@ -1,4 +1,6 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # FAQ model 
 class Base(models.Model):
@@ -20,7 +22,7 @@ class Base(models.Model):
 # About page
 class About(models.Model):
     title = models.CharField(max_length=200)
-    desc = models.TextField()
+    desc = RichTextUploadingField()
 
 
     def __str__(self) -> str:
@@ -59,7 +61,7 @@ class OurCoreServis(models.Model):
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=200)
     desc = models.TextField()
-    
+
     # Ruscha versiya
     rus_name = models.CharField(max_length=50)
     rust_title = models.CharField(max_length=200)

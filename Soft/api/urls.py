@@ -14,6 +14,7 @@ urlpatterns = [
     path('about/<int:pk>/', AboutUpdatedSerializer.as_view()),
     path('gallery/<int:id>/', GalleryUpdatedSerializer.as_view()),
     path('our/<int:id>/', OurUpdatedSerializer.as_view()),
+    path('hometitle/<int:id>/', HomeTitleUpdateSerializerAPI.as_view())
 
 ]
 
