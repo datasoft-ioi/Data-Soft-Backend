@@ -2,3 +2,5 @@ django
 djangorestframework
 whitenoise
 django-cors-headers
+Pillow
+django-ckeditor
