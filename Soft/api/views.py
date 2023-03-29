@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Base, About, Gallery, OurProjects, HomeTitle
+from .models import Base, About, Gallery, OurProjects, HomeTitle, OurCoreServis
 from rest_framework.views import APIView
-from .serializers import BaseSerializer, AboutSerializer, GallerySerializer, OurProjectsSerializer, HomeTitleSerializer
+from .serializers import BaseSerializer, AboutSerializer, GallerySerializer, OurProjectsSerializer, HomeTitleSerializer, OurCoreServis
 from rest_framework import status
 from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly

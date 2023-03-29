@@ -70,7 +70,7 @@ class OurCoreServis(models.Model):
     def __str__(self) -> str:
         return self.name
 
-
+# InfoDev
 class InfoDev(models.Model):
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=200)
