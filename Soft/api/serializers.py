@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Base, About, Gallery, OurProjects, HomeTitle
+from .models import Base, About, Gallery, OurProjects, HomeTitle, OurCoreServis, InfoDev
 
 
 class BaseSerializer(serializers.ModelSerializer):
@@ -34,3 +34,7 @@ class OurProjectsSerializer(serializers.ModelSerializer):
         model = OurProjects
         fields = '__all__'
 
+
+class OurCoreSevisSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OurCoreServis

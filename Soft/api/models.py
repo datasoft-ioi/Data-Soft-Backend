@@ -55,3 +55,29 @@ class HomeTitle(models.Model):
         return self.uz_title
     
 
+class OurCoreServis(models.Model):
+    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=200)
+    desc = models.TextField()
+    
+    # Ruscha versiya
+    rus_name = models.CharField(max_length=50)
+    rust_title = models.CharField(max_length=200)
+    rus_desc = models.TextField()
+
+    def __str__(self) -> str:
+        return self.name
+
+
+class InfoDev(models.Model):
+    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=200)
+    desc = models.TextField()
+
+    # Ruscha verisyasi
+    rus_name = models.CharField(max_length=50)
+    rus_title = models.CharField(max_length=200)
+    rus_desc = models.TextField()
+
+    def __str__(self) -> str:
+        return self.name
