@@ -11,7 +11,7 @@ urlpatterns = [
     path('ourservis/', OurCoreSevisSerializerAPI.as_view()),
 
     # detail update url
-    path('change/<int:pk>/', BaseUpdatedSerializer.as_view()),
+    path('api/<int:pk>/', BaseUpdatedSerializer.as_view()),
     path('about/<int:pk>/', AboutUpdatedSerializer.as_view()),
     path('gallery/<int:pk>/', GalleryUpdatedSerializer.as_view()),
     path('our/<int:pk>/', OurUpdatedSerializer.as_view()),
