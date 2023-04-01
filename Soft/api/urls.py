@@ -3,6 +3,7 @@ from .views import *
 
 
 urlpatterns = [
+    # detail view
     path('api/', BaseSerializerAPI.as_view()),
     path('about/', AboutSerializerAPI.as_view()),
     path('gallery/', GalerrySerializerAPI.as_view()),
