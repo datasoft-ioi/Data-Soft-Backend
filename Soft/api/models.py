@@ -43,7 +43,7 @@ class About(models.Model):
 class Gallery(models.Model):
     title = models.CharField(max_length=200)
     # rus
-    rus_title = models.CharField(max_length=200)
+    ru_title = models.CharField(max_length=200)
 
     image = models.ImageField(upload_to='media/galley/%Y/%m/%d')
 
