@@ -235,7 +235,7 @@ class OurUpdatedSerializer(APIView):
         return Response(data={"deleted":"bases"}, status=status.HTTP_204_NO_CONTENT)
         
 
-
+# FAQ API
 class BaseSerializerAPI(APIView, PageNumberPagination):
     page_size = 3
     serializer_class = BaseSerializer
@@ -254,7 +254,7 @@ class BaseSerializerAPI(APIView, PageNumberPagination):
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
-
+# FAQ API UPDATE
 class BaseUpdatedSerializer(APIView):
     serializer_class = BaseSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
