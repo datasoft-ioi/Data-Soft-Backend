@@ -214,7 +214,7 @@ class OurUpdatedSerializer(APIView):
     def put(self, request,pk):
         data= request.data
         result = get_object_or_404(OurProjects, id=pk)
-        serializer =self.serializer_class(instance=result, data=data)
+        serializer = self.serializer_class(instance=result, data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(data=serializer.data)

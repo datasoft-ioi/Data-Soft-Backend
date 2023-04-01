@@ -13,10 +13,10 @@ urlpatterns = [
     # detail update url
     path('change/<int:pk>/', BaseUpdatedSerializer.as_view()),
     path('about/<int:pk>/', AboutUpdatedSerializer.as_view()),
-    path('gallery/<int:id>/', GalleryUpdatedSerializer.as_view()),
-    path('our/<int:id>/', OurUpdatedSerializer.as_view()),
-    path('hometitle/<int:id>/', HomeTitleUpdateSerializerAPI.as_view()),
-    path('ourservis/<int:id>/', OurCoreSevisUpdateSerializerAPI.as_view())
+    path('gallery/<int:pk>/', GalleryUpdatedSerializer.as_view()),
+    path('our/<int:pk>/', OurUpdatedSerializer.as_view()),
+    path('hometitle/<int:pk>/', HomeTitleUpdateSerializerAPI.as_view()),
+    path('ourservis/<int:pk>/', OurCoreSevisUpdateSerializerAPI.as_view())
 
 ]
 

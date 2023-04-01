@@ -21,9 +21,13 @@ class Base(models.Model):
 
 # About page
 class About(models.Model):
+    # uzb
     title = models.CharField(max_length=200)
     desc = RichTextUploadingField()
 
+    # Rus
+    rus_title = models.CharField(max_length=200)
+    rus_desc = models.TextField()
 
     def __str__(self) -> str:
         return self.title
@@ -60,12 +64,12 @@ class HomeTitle(models.Model):
 class OurCoreServis(models.Model):
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=200)
-    desc = models.TextField()
+    desc = models.TextField(max_length=300)
 
     # Ruscha versiya
     rus_name = models.CharField(max_length=50)
     rust_title = models.CharField(max_length=200)
-    rus_desc = models.TextField()
+    rus_desc = models.TextField(max_length=300)
 
     def __str__(self) -> str:
         return self.name
