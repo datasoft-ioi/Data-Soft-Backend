@@ -9,6 +9,7 @@ urlpatterns = [
     path('our/', OurProjectsSerializerAPI.as_view()),
     path('hometitle/', HomeTitleSerializerAPI.as_view()),
     path('ourservis/', OurCoreSevisSerializerAPI.as_view()),
+    path('info/', InfoDevSerializerAPI.as_view()),
 
     # detail update url
     path('api/<int:pk>/', BaseUpdatedSerializer.as_view()),
@@ -16,7 +17,8 @@ urlpatterns = [
     path('gallery/<int:pk>/', GalleryUpdatedSerializer.as_view()),
     path('our/<int:pk>/', OurUpdatedSerializer.as_view()),
     path('hometitle/<int:pk>/', HomeTitleUpdateSerializerAPI.as_view()),
-    path('ourservis/<int:pk>/', OurCoreSevisUpdateSerializerAPI.as_view())
+    path('ourservis/<int:pk>/', OurCoreSevisUpdateSerializerAPI.as_view()),
+    path('info/<int:pk>/', InfoUpdateSerializerAPI.as_view()),
 
 ]
 
