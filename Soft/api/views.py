@@ -145,7 +145,7 @@ class GalerrySerializerAPI(APIView, PageNumberPagination):
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
 
-# Gallery update serializer
+# Gallery update API
 class GalleryUpdatedSerializer(APIView):
     serializer_class = GallerySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
