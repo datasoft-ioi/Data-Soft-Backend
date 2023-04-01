@@ -2,7 +2,8 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
-# FAQ model 
+
+# FAQ model
 class Base(models.Model):
 
     # uzb
@@ -21,8 +22,14 @@ class Base(models.Model):
 
 # About page
 class About(models.Model):
+
+    #uzb
     title = models.CharField(max_length=200)
     desc = RichTextUploadingField()
+
+    # rus
+    rus_title = models.CharField(max_length=200)
+    rus_desc = RichTextUploadingField()
 
 
     def __str__(self) -> str:
@@ -32,7 +39,10 @@ class About(models.Model):
 # Gallery
 class Gallery(models.Model):
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='media/galley/%Y/%m/%d')
+
+    # rus
+    rus_title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='media/galley/%Y/%m/%d')    
 
     def __str__(self) -> str:
         return self.title
@@ -43,6 +53,9 @@ class OurProjects(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='media/%Y/%m/%d')
     url = models.CharField(max_length=200)
+
+    # rus
+    rus_title = models.CharField(max_length=200)
 
 
 # Asosiy sayt uchun
