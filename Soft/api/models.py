@@ -25,9 +25,15 @@ class About(models.Model):
     title = models.CharField(max_length=200)
     desc = RichTextUploadingField()
 
+
     # Rus
     rus_title = models.CharField(max_length=200)
     rus_desc = models.TextField()
+
+    # rus
+    rus_title = models.CharField(max_length=200)
+    rus_desc = RichTextUploadingField()
+
 
     def __str__(self) -> str:
         return self.title
@@ -36,6 +42,9 @@ class About(models.Model):
 # Gallery
 class Gallery(models.Model):
     title = models.CharField(max_length=200)
+    # rus
+    rus_title = models.CharField(max_length=200)
+
     image = models.ImageField(upload_to='media/galley/%Y/%m/%d')
 
     def __str__(self) -> str:
@@ -45,6 +54,9 @@ class Gallery(models.Model):
 # OurProjects
 class OurProjects(models.Model):
     title = models.CharField(max_length=200)
+    # rus
+    rus_title = models.CharField(max_length=200)
+    
     image = models.ImageField(upload_to='media/%Y/%m/%d')
     url = models.CharField(max_length=200)
 

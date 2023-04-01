@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8sih@+@$!k#sgmhud8zc9so+ynd^35ei84-%#-w*a$b!3g&l3%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "soft.datashop.uz", "data-soft.uz", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "soft.datashop.uz", "api.data-soft.uz", "test.data-soft.uz", "127.0.0.1"]
 
 
 # Application definition
@@ -68,7 +68,7 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ['https://soft.datashop.uz']
+CSRF_TRUSTED_ORIGINS = ['https://soft.datashop.uz', 'https://api.data-soft.uz']
 
 
 ROOT_URLCONF = 'config.urls'

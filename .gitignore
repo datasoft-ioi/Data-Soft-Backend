@@ -8,7 +8,6 @@ __pycache__/
 staticfiles
 static
 
-Soft/api/migrations
 
 # Distribution / packaging
 .Python
@@ -132,4 +131,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-Soft/api/migrations/0001_initial.py
