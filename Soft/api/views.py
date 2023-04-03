@@ -125,7 +125,7 @@ class HomeTitleUpdateSerializerAPI(APIView):
 
 # Gallery API
 class GalerrySerializerAPI(APIView, PageNumberPagination):
-    page_size = 3
+    page_size = 6
     serializer_class = GallerySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
