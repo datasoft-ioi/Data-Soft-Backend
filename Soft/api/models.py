@@ -5,7 +5,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 # FAQ model 
 class Base(models.Model):
 
-    # uzb
+    # uzb                                                                                                                                                                                                                             
     title = models.CharField(max_length=200)
     desc = models.TextField()
 
@@ -17,6 +17,10 @@ class Base(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+    class Meta:
+        verbose_name = "FAQ"
+        verbose_name_plural = "FAQs"
     
 
 # About page
