@@ -62,6 +62,7 @@ class OurProjects(models.Model):
     rus_title = models.CharField(max_length=200)
     
     image = models.ImageField(upload_to='media/%Y/%m/%d')
+    logo = models.ImageField(upload_to='media/logo/%Y/%m/%d')
     url = models.CharField(max_length=200)
 
 
